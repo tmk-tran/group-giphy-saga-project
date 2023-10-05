@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   res.sendStatus(200);
   }
-});
+);
 
 // Favorites category route
 router.post('/favoriteCategory', (req, res) => {  
