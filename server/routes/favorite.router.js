@@ -1,13 +1,16 @@
 const express = require('express');
 const pool = require('../modules/pool');
+const axios = require("axios");
 
 const router = express.Router();
 
 //get api request for giphy search
-router.get("/", async (req, res) => {
+router.get("/:q", async (req, res) => {
   try {
+    let searchString = req.params.q
+    console.log(searchString)
     const response = await axios.get(
-      `http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}`
+      `http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}q=${searchString}`
     );
     res.send(response.data);
   } catch (err) {
