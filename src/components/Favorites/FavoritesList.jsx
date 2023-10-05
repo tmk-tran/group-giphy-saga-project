@@ -2,12 +2,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-export default function Favorites() {
+export default function FavoritesList() {
   return (
     <Card>
       <CardContent>
-      <Typography variant="h6" component="div">Title of Image</Typography>
-
+        <Typography variant="h6" component="div">
+          These are the favorites
+        </Typography>
       </CardContent>
     </Card>
   );
