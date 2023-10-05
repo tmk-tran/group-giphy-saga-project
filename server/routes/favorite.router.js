@@ -1,8 +1,6 @@
 const express = require("express");
 const pool = require("../modules/pool");
 
-const axios = require("axios");
-
 const router = express.Router();
 
 //get api request for giphy search
@@ -43,26 +41,6 @@ router.post("/favoriteCategory", (req, res) => {
     })
     .catch((err) => {
       console.log("Error inserting into category_favorite table", err);
-      res.sendStatus(500);
-    });
-});
-
-// update given favorite with a category id
-
-router.put("/:favoriteId", (req, res) => {
-  const favoriteId = req.params.favoriteId;
-
-  // req.body should contain a category_id to add to this favorite image
-  const updatedFavorite = req.body.category_id;
-
-  const queryText = `UPDATE "category_favorite" SET "category_id" = $1 WHERE "fav_id" = $2`;
-  pool
-    .query(queryText, [updatedFavorite, favoriteId])
-    .then(() => {
-      res.sendStatus(200);
-    })
-    .catch((err) => {
-      console.log("Error updating category favorite", err);
       res.sendStatus(500);
     });
 });

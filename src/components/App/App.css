@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(160, 204, 183);
+}
 .links {
   display: flex;
   flex-direction: row;

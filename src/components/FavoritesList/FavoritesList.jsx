@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 export default function FavoritesList() {
   return (
     <div>
-      <h2>Favorites Page</h2>
+      <h1>Favorites Page</h1>
       <Card>
         <CardContent>
           <Typography variant="h6" component="div">
