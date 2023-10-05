@@ -1,6 +1,6 @@
 const express = require('express');
 const pool = require('../modules/pool');
-
+const axios = require("axios");
 const router = express.Router();
 
 //get api request for giphy search
@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     );
     res.send(response.data);
   } catch (err) {
-    console.log(err);
+    console.log("error in GET API", err);
     res.sendStatus(500);
   }
 })
