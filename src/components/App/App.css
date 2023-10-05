@@ -1,7 +1,10 @@
 .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 2px solid black;
-    width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid black;
+  width: 50%;
+}
+body {
+  background-color: rgb(160, 204, 183);
 }

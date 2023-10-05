@@ -1,5 +1,5 @@
-const express = require('express');
-const pool = require('../modules/pool');
+const express = require("express");
+const pool = require("../modules/pool");
 
 const axios = require("axios");
 
@@ -16,25 +16,24 @@ router.get("/", async (req, res) => {
     console.log(err);
     res.sendStatus(500);
   }
-})
+});
 
 // return all favorite images
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   res.sendStatus(200);
 });
 
 // add a new favorite
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   res.sendStatus(200);
-  }
 });
 
 // update given favorite with a category id
-router.put('/:favId', (req, res) => {
+router.put("/:favId", (req, res) => {
   // req.body should contain a category_id to add to this favorite image
   const updatedFavorite = req.body.category_id;
 
-  const queryText = `UPDATE `
+  const queryText = `UPDATE `;
   res.sendStatus(200);
 });
 
