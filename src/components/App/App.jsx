@@ -5,7 +5,10 @@ import Form from "../Form/Form";
 import FavoritesList from "../FavoritesList/FavoritesList";
 import "./App.css";
 import { AppBar, Toolbar, Typography } from "@mui/material";
-// import FavoritesList from "../FavoritesList/FavoritesList"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function App(props) {
   return (
@@ -16,16 +19,28 @@ function App(props) {
           <Toolbar>
             <Typography variant="h4">Giphy Search</Typography>
             <div className="links">
-              <Link to="/">Home</Link>
-              <Link to="/form">Form</Link>
-              <Link to="/favorites">Favorite</Link>
+              <Link to="/">
+                <FontAwesomeIcon icon={faHome} size="1x" />{" "}
+                {/* Display the Home icon */}
+              </Link>
+              <Link to="/form">
+                {" "}
+                <FontAwesomeIcon icon={faList} size="1x" />{" "}
+                {/* Display the List icon */}
+              </Link>
+              <Link to="/favorites">
+                {" "}
+                <FontAwesomeIcon icon={faHeart} size="1x" color="red" />{" "}
+                {/* Display the Favorite icon */}
+              </Link>
             </div>
           </Toolbar>
         </AppBar>
-
+        <Route exact path="/">
+          {/* need to fill in component here */}
+        </Route>
         <Route exact path="/favorites">
           <FavoritesList />
-          {/* insert component later*/}
         </Route>
         <Route path="/form">
           <Form />

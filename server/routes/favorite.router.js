@@ -42,6 +42,7 @@ router.post('/favoriteCategory', (req, res) => {
     });
 });
 
+
 // update given favorite with a category id
 
 router.put('/:favoriteId', (req, res) => {
