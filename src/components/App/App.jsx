@@ -19,7 +19,7 @@ function App(props) {
             <Typography variant="h4">Giphy Search</Typography>
             <div className="links">
               <Link to="/">
-                {" "}
+                
                 <FontAwesomeIcon icon={faHome} size="1x" />{" "}
                 {/* Display the Home icon */}
               </Link>
@@ -32,10 +32,11 @@ function App(props) {
             </div>
           </Toolbar>
         </AppBar>
-
+        <Route exact path="/">
+          {/* need to fill in component here */}
+        </Route>
         <Route exact path="/favorites">
           <FavoritesList />
-          {/* insert component later*/}
         </Route>
         <Route path="/form">
           <Form />
