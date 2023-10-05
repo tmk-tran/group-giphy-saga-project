@@ -3,6 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 export default function FavoritesList() {
+  
   return (
     <div>
       <h1>Favorites Page</h1>

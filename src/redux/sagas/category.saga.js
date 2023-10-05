@@ -18,7 +18,7 @@ function* addCategorySaga() {
     yield axios({
       method: "POST",
       url: "/api/category" ,  
-      data: { name: action.payload.name}
+      data: { name: action.payload.newInput}
     })
   } catch (error) {
     console.log('Error in addCategorySaga', error);
@@ -60,7 +60,7 @@ function* fetchSearchResults(action){
         method: "GET",
         url: `/api/search?term=${action.payload}`,
       });
-      yield put({ type: "SET_SEARCH", payload: response });
+      yield put({ type: "SET_SEARCH", payload: response.data });
     } catch (error) {
       console.log("error with SEARCH GET request", error);
     }

@@ -15,7 +15,6 @@ function App(props) {
   return (
     <Router>
       <div className="App">
-        <Header />
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h4">Giphy Search</Typography>
@@ -27,7 +26,7 @@ function App(props) {
               <Link to="/category">
                 {" "}
                 <FontAwesomeIcon icon={faList} size="1x" />{" "}
-                {/* <CategoryList /> */}
+                {/* <CategoryList/> */}
               </Link>
               <Link to="/favorites">
                 {" "}
@@ -37,6 +36,7 @@ function App(props) {
             </div>
           </Toolbar>
         </AppBar>
+        <Header />
         <Route exact path="/">
           <Form />
         </Route>

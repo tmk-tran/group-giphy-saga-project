@@ -1,12 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-function CategoryItem(props) {
+function CategoryItem({categoryItem}) {
     const dispatch = useDispatch();
+    
+    return 
+    (
 
-    return (
         <li>
-            <span>{props.CategoryItem.url}</span>
+            <span>{categoryItem.name}</span>
+            <span>{categoryItem.url}</span>
         </li>
     )
 }

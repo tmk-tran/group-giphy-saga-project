@@ -5,17 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 function CategoryList() {
     const dispatch = useDispatch();
 
-    const categoryReducer = useSelector((store) => store.categoryReducer.categoryReducer);
+    const searchReducer = useSelector((store) => store.category.searchReducer);
 
     useEffect(() => {
-        dispatch({ type: "FETCH_CATEGORY" });
+        dispatch({ type: "FETCH_CATEGORY"});
     }, []); 
 }
 
 return (
     <ul>
 
-            {categoryReducer.map((categoryItem) => {
+            {searchReducer.map((categoryItem) => {
                 return <CategoryItem key={categoryItem.id} categoryItem={categoryItem} />
             })}
     
