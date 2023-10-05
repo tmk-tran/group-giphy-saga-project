@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require('express');
 const pool = require('../modules/pool');
-const axios = reequire("axios");
+const axios = require("axios");
 const router = express.Router();
 
 //get api request for giphy search
