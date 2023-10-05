@@ -23,7 +23,7 @@ function App(props) {
                 <FontAwesomeIcon icon={faHome} size="1x" />{" "}
                 {/* Display the Home icon */}
               </Link>
-              <Link to="/form">
+              <Link to="/category">
                 {" "}
                 <FontAwesomeIcon icon={faList} size="1x" />{" "}
                 {/* Display the List icon */}
@@ -37,13 +37,11 @@ function App(props) {
           </Toolbar>
         </AppBar>
         <Route exact path="/">
-          {/* need to fill in component here */}
-        </Route>
-        <Route exact path="/favorites">
-          <FavoritesList />
-        </Route>
-        <Route path="/form">
           <Form />
+        </Route>
+        <Route exact path="/category"></Route>
+        <Route path="/favorites">
+          <FavoritesList />
         </Route>
       </div>
     </Router>

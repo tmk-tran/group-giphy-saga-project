@@ -4,13 +4,14 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { TextField } from "@mui/material";
 import { useHistory } from "react-router-dom";
+import "./Form.css";
 
 
 export default function Form() {
     const history = useHistory();
 
     const handleClick = () => {
-        history.push(`/favorites`);
+        history.push(`/category`);
     }
 
     return (
