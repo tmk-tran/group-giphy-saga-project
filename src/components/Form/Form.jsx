@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,7 +10,7 @@ export default function Form() {
             <Card>
                 <CardContent>
                     <TextField type="text" value="" placeholder="Search"></TextField>
-                    <Button variant="contained">ADD Image</Button>
+                    <Button variant="contained" onClick={()=> console.log('clicked ADD BUTTON')}>ADD Image</Button>
                 </CardContent>
             </Card>
         </div>

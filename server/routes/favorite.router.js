@@ -48,8 +48,11 @@ router.post('/', async (req, res) => {
 
 // update given favorite with a category id
 router.put('/:favId', (req, res) => {
+  const favoriteID = req.params.favoriteId
   // req.body should contain a category_id to add to this favorite image
+  const updatedFavorite = req.body.category_id;
 
+  const queryText = `UPDATE `
   res.sendStatus(200);
 });
 

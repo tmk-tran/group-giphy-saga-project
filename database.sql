@@ -20,6 +20,12 @@ CREATE TABLE "favorites" (
     "category_id" INT DEFAULT NULL
 );
 
+CREATE TABLE "category_favorite" (
+    "id" SERIAL PRIMARY KEY
+    "fav_id" REFERENCES "favorites"
+    "category_id" REFERENCES "category"
+);
+
 //foreignkey???
 
 INSERT INTO "favorites" ("url")
