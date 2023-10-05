@@ -1,5 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+import { legacy_createStore as createStore, combineReducers, applyMiddleware } from 'redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+
+
+
+const storeInstance = createStore(
+    combineReducers({
+    }),
+    applyMiddleware(logger),
+);
+
+ReactDOM.render(
+<Provider store={storeInstance}>
+    <App />
+</Provider>, 
+document.getElementById('root'));
