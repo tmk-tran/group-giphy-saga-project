@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
 import FavoritesList from "../FavoritesList/FavoritesList";
+// import CategoryList from "../CategoryList/CategoryList";
 import "./App.css";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +27,7 @@ function App(props) {
               <Link to="/category">
                 {" "}
                 <FontAwesomeIcon icon={faList} size="1x" />{" "}
-                {/* Display the List icon */}
+                {/* <CategoryList /> */}
               </Link>
               <Link to="/favorites">
                 {" "}

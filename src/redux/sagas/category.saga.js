@@ -14,6 +14,19 @@ function* fetchCategorySaga() {
   }
 }
 
+function* addCategorySaga() {
+  try {
+    yield axios({
+      method: "POST",
+      url: "/" ,    ///what url????
+      data: { url: action.payload}, //what payload????
+    })
+  } catch (error) {
+    console.log('Error in addCategorySaga', error);
+  }
+}
+
 export default function* () {
   yield takeEvery("FETCH_CATEGORY", fetchCategorySaga);
+  yield takeEvery("ADD_CATEGORY", addCategorySaga)
 }

@@ -1,5 +1,9 @@
 .card {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    width: 100%;
+}
+
+.search-button {
+    margin: 0 auto;
 }
