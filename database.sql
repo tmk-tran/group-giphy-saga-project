@@ -12,3 +12,21 @@ CREATE TABLE "category" (
 -- Default categories. You may change them :)
 INSERT INTO "category" ("name")
 VALUES ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
+
+-- Favorite table
+CREATE TABLE "favorites" (
+    "id" SERIAL PRIMARY KEY,
+    "url" VARCHAR (300) NOT NULL,
+    "category_id" INT DEFAULT NULL
+);
+
+CREATE TABLE "category_favorite" (
+    "id" SERIAL PRIMARY KEY
+    "fav_id" REFERENCES "favorites"
+    "category_id" REFERENCES "category"
+);
+
+//foreignkey???
+
+INSERT INTO "favorites" ("url")
+VALUES ('https://giphy.com/gifs/this-is-fine-QMHoU66sBXqqLqYvGO'), ('https://giphy.com/gifs/parksandrec-parks-and-recreation-rec-peacocktv-iF8IaDx2N6vfzS2k52');
