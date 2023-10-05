@@ -19,15 +19,6 @@ router.get("/", async (req, res) => {
 })
 
 // return all favorite images
-router.get('/', (req, res) => {
-  res.sendStatus(200);
-});
-
-// add a new favorite
-router.post('/', (req, res) => {
-  res.sendStatus(200);
-  }
-});
 
 // Favorites category route
 router.post('/favoriteCategory', (req, res) => {  
