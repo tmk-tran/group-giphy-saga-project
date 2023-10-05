@@ -26,7 +26,7 @@ CREATE TABLE "category_favorite" (
     "category_id" REFERENCES "category"
 );
 
-//foreignkey???
+-- foreignkey is the caregory id
 
 INSERT INTO "favorites" ("url")
 VALUES ('https://giphy.com/gifs/this-is-fine-QMHoU66sBXqqLqYvGO'), ('https://giphy.com/gifs/parksandrec-parks-and-recreation-rec-peacocktv-iF8IaDx2N6vfzS2k52');
