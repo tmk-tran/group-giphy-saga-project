@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   res.sendStatus(200);
   }
-});
+);
 
 // update given favorite with a category id
 router.put('/:favId', (req, res) => {
