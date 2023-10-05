@@ -13,7 +13,7 @@ const favoritesReducer = (state = [], action ) => {
   switch (action.type) {
     case "SET_FAVORITES":
       return action.payload
-    defualt:
+    default:
     return state
   }
 }
