@@ -25,6 +25,8 @@ function* addCategorySaga() {
   }
 }
 
+
+
 function* fetchFavoriteSaga(){
   try {
       const response = yield axios({
@@ -72,6 +74,7 @@ function* deleteFavorite(action) {
     console.log("error with DELETE request", error);
   }
 }
+
 
 
 export default function* () {

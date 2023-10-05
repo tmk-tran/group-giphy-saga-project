@@ -9,4 +9,22 @@ const categoryReducer = (state = [], action) => {
   }
 };
 
-export default combineReducers({ categoryReducer });
+const favoritesReducer = (state = [], action ) => {
+  switch (action.type) {
+    case "SET_FAVORITES":
+      return action.payload
+    defualt:
+    return state
+  }
+}
+
+const searchReducer = (state = [], action) => {
+  switch (action.type) {
+    case "SET_SEARCH":
+    return action.payload
+    default:
+      return state
+  }
+}
+
+export default combineReducers({ categoryReducer, favoritesReducer, searchReducer });
