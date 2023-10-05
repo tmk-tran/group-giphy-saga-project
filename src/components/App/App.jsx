@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
+import FavoritesList from "../FavoritesList/FavoritesList";
 import "./App.css";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 // import FavoritesList from "../FavoritesList/FavoritesList"
@@ -17,12 +18,13 @@ function App(props) {
             <div className="links">
               <Link to="/">Home</Link>
               <Link to="/form">Form</Link>
+              <Link to="/favorites">Favorite</Link>
             </div>
           </Toolbar>
         </AppBar>
 
         <Route exact path="/favorites">
-          {/* <FavoritesList /> */}
+          <FavoritesList />
           {/* insert component later*/}
         </Route>
         <Route path="/form">
