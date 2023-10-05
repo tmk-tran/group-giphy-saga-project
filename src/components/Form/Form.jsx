@@ -14,7 +14,7 @@ export default function Form() {
     }
 
     return (
-        <div>
+        <div className="card">
             <Card>
                 <CardContent>
                     <TextField type="text" value="" placeholder="Search"></TextField>
