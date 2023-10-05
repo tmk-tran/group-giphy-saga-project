@@ -1,7 +1,6 @@
 import { all } from "redux-saga/effects";
-
-//import saga here
+import categorySaga from "./category.saga";
 
 export default function* () {
-  yield all();
+  yield all([categorySaga]);
 }
