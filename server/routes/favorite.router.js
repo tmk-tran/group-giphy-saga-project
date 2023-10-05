@@ -46,14 +46,32 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Favorites category route
+router.post('/favoriteCategory', (req, res) => {  
+  const favoriteCategory = req.body;
+  const queryText = `INSERT INTO "category_favorite" ("fav_id", "category_id")
+                    VALUES ($1, $2)`;
+  pool.query(queryText, [favoriteCategory.favorite_id, favoriteCategory.category_id])
+    .then(() => { res.sendStatus(201); })
+    .catch((err) => {
+      console.log('Error inserting into category_favorite table', err);
+      res.sendStatus(500);
+    });
+});
+
 // update given favorite with a category id
-router.put('/:favId', (req, res) => {
-  const favoriteID = req.params.favoriteId
+router.put('/:favoriteId', (req, res) => {
+  const favoriteId = req.params.favoriteId;
   // req.body should contain a category_id to add to this favorite image
   const updatedFavorite = req.body.category_id;
 
-  const queryText = `UPDATE `
-  res.sendStatus(200);
+  const queryText = `UPDATE "category_favorite" SET "category_id" = $1 WHERE "fav_id" = $2`;
+  pool.query(queryText, [updatedFavorite, favoriteId])
+    .then(() => { res.sendStatus(200); })
+    .catch((err) => {
+      console.log('Error updating category favorite', err);
+      res.sendStatus(500);
+    });
 });
 
 // delete a favorite
