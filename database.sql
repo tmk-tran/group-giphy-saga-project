@@ -16,17 +16,17 @@ VALUES ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
 -- Favorite table
 CREATE TABLE "favorites" (
     "id" SERIAL PRIMARY KEY,
-    "url" VARCHAR (300) NOT NULL,
-    "category_id" INT DEFAULT NULL
+    "url" VARCHAR (300) NOT NULL
 );
 
 CREATE TABLE "category_favorite" (
-    "id" SERIAL PRIMARY KEY
-    "fav_id" REFERENCES "favorites"
-    "category_id" REFERENCES "category"
+
+    "id" SERIAL PRIMARY KEY,
+    "fav_id" INT REFERENCES "favorites",
+    "category_id" INT REFERENCES "category"
 );
 
-//foreignkey???
+
 
 INSERT INTO "favorites" ("url")
 VALUES ('https://giphy.com/gifs/this-is-fine-QMHoU66sBXqqLqYvGO'), ('https://giphy.com/gifs/parksandrec-parks-and-recreation-rec-peacocktv-iF8IaDx2N6vfzS2k52');
