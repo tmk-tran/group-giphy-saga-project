@@ -26,6 +26,8 @@ function* addCategorySaga() {
   }
 }
 
+
+
 export default function* () {
   yield takeEvery("FETCH_CATEGORY", fetchCategorySaga);
   yield takeEvery("ADD_CATEGORY", addCategorySaga)
