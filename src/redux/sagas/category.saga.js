@@ -5,8 +5,9 @@ function* fetchCategorySaga() {
   try {
     const response = yield axios({
       method: "GET",
-      url: "/api/category",
+      url: "/",
     });
+
     yield put({ type: "SET_CATEGORY", payload: response.data });
   } catch (error) {
     console.log(error);
@@ -17,14 +18,13 @@ function* addCategorySaga() {
   try {
     yield axios({
       method: "POST",
-      url: "/api/category" ,  
-      data: { name: action.payload.name}
+      url: "/" ,    ///what url????
+      data: { url: action.payload}, //what payload????
     })
   } catch (error) {
     console.log('Error in addCategorySaga', error);
   }
 }
-
 
 
 function* fetchFavoriteSaga(){
@@ -77,12 +77,8 @@ function* deleteFavorite(action) {
 
 
 
+
 export default function* () {
   yield takeEvery("FETCH_CATEGORY", fetchCategorySaga);
-  yield takeEvery("ADD_CATEGORY", addCategorySaga);
-  yield takeEvery("FETCH_FAVORITE", fetchFavoriteSaga);
-  yield takeEvery("ADD_FAVORITE", addFavoriteSaga);
-  yield takeEvery("FETCH_SEARCH", fetchSearchResults);
-  yield takeEvery("DELETE_FAVORITE", deleteFavorite);
-
+  yield takeEvery("ADD_CATEGORY", addCategorySaga)
 }

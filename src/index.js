@@ -22,7 +22,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const storeInstance = createStore(
     combineReducers({
-        getCategorySaga, addCategorySaga, getFavoriteSaga, addFavoriteSaga
+        fetchCategorySaga, addCategorySaga, getFavoriteSaga, addFavoriteSaga
     }),
     applyMiddleware(sagaMiddleware, logger),
 );
