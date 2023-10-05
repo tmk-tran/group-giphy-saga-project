@@ -22,8 +22,8 @@ CREATE TABLE "favorites" (
 
 CREATE TABLE "category_favorite" (
     "id" SERIAL PRIMARY KEY
-    "fav_id" REFERENCES "favorites"
-    "category_id" REFERENCES "category"
+    "fav_id" INT REFERENCES "favorites"
+    "category_id" INT REFERENCES "category"
 );
 
 //foreignkey???
