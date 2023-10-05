@@ -8,6 +8,7 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function App(props) {
   return (
@@ -19,7 +20,6 @@ function App(props) {
             <Typography variant="h4">Giphy Search</Typography>
             <div className="links">
               <Link to="/">
-                
                 <FontAwesomeIcon icon={faHome} size="1x" />{" "}
                 {/* Display the Home icon */}
               </Link>
@@ -28,7 +28,11 @@ function App(props) {
                 <FontAwesomeIcon icon={faList} size="1x" />{" "}
                 {/* Display the List icon */}
               </Link>
-              <Link to="/favorites">Favorite</Link>
+              <Link to="/favorites">
+                {" "}
+                <FontAwesomeIcon icon={faHeart} size="1x" color="red" />{" "}
+                {/* Display the Favorite icon */}
+              </Link>
             </div>
           </Toolbar>
         </AppBar>
