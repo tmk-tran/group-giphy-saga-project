@@ -6,6 +6,10 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.14.12",
     "axios": "^0.21.1",
     "dotenv": "^16.3.1",
@@ -18,7 +22,8 @@
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^1.2.3"
+    "redux-saga": "^1.2.3",
+    "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

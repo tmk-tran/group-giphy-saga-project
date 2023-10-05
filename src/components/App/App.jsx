@@ -5,7 +5,9 @@ import Form from "../Form/Form";
 import FavoritesList from "../FavoritesList/FavoritesList";
 import "./App.css";
 import { AppBar, Toolbar, Typography } from "@mui/material";
-// import FavoritesList from "../FavoritesList/FavoritesList"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 function App(props) {
   return (
@@ -16,8 +18,16 @@ function App(props) {
           <Toolbar>
             <Typography variant="h4">Giphy Search</Typography>
             <div className="links">
-              <Link to="/">Home</Link>
-              <Link to="/form">Form</Link>
+              <Link to="/">
+                {" "}
+                <FontAwesomeIcon icon={faHome} size="1x" />{" "}
+                {/* Display the Home icon */}
+              </Link>
+              <Link to="/form">
+                {" "}
+                <FontAwesomeIcon icon={faList} size="1x" />{" "}
+                {/* Display the List icon */}
+              </Link>
               <Link to="/favorites">Favorite</Link>
             </div>
           </Toolbar>
