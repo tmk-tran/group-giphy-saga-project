@@ -12,7 +12,9 @@ export default function FavoritesListItem({ favorite }) {
   const dispatch = useDispatch();
   // const history = useHistory();
 
-  const [selectedCategory, setSelectedCategory] = useState(favorite.category_id);
+  const [selectedCategory, setSelectedCategory] = useState(
+    favorite.category_id
+  );
 
   const category = useSelector(
     (store) => store.categoryReducer.categoryReducer
@@ -49,9 +51,10 @@ export default function FavoritesListItem({ favorite }) {
         <Button
           variant="contained"
           style={{ marginRight: "15px", backgroundColor: "red" }}
-          onClick={() =>
-            dispatch({ type: "DELETE_FAVORITE", payload: favorite.id })
-          }
+          onClick={() => {
+            dispatch({ type: "DELETE_FAVORITE", payload: favorite.id }),
+              alert("Deleted!");
+          }}
         >
           Delete
         </Button>
