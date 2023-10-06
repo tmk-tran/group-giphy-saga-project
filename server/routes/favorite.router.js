@@ -16,13 +16,12 @@ router.get("/", async (req, res) => {
   }
 });
 
-// return all favorite images
-router.get("/", (req, res) => {
-  res.sendStatus(200);
-});
+// update given favorite with a category id
+router.put("/:favId", (req, res) => {
+  // req.body should contain a category_id to add to this favorite image
+  const updatedFavorite = req.body.category_id;
 
-// add a new favorite
-router.post("/", (req, res) => {
+  const queryText = `UPDATE `;
   res.sendStatus(200);
 });
 
@@ -46,8 +45,18 @@ router.post("/favoriteCategory", (req, res) => {
 });
 
 // delete a favorite
-router.delete("/", (req, res) => {
-  res.sendStatus(200);
+router.delete("/:id", (req, res) => {
+  const id = req.params;
+  let queryText = `DELETE FROM "favorites" WHERE "id"=$1;`;
+  pool
+    .query(queryText, [id])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log("ERROR deleting in DB:", err);
+      res.sendStatus(500);
+    });
 });
 
 module.exports = router;

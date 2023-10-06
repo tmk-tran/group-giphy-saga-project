@@ -12,3 +12,8 @@ body {
   background-color: rgb(164, 238, 230);
   font-size: 18px;
 }
+
+h1,
+h2 {
+  text-align: center;
+}

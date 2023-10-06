@@ -1,0 +1,14 @@
+.card {
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 50%;
+    margin: 100px auto;
+}
+
+.card-container {
+    height: 500px;
+}
+
+.search-button {
+    margin: 0 auto;
+}
