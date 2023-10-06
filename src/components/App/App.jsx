@@ -16,8 +16,8 @@ function App() {
     <Router>
       <div className="App">
         <AppBar position="static">
-          <Toolbar>
-            <div className="links">
+          <Toolbar >
+            <div className="links" style={{ backgroundColor: "white" }} >
               <Link to="/">
                 <FontAwesomeIcon icon={faHome} size="1x" style={{ marginLeft: "10px" }} />{" "}
                 {/* Display the Home icon */}
