@@ -54,11 +54,23 @@ function* addFavoriteSaga(action) {
   }
 }
 
+// function* fetchSearchResults(action){
+//   try {
+//       const response = yield axios({
+//         method: "GET",
+//         url: `/api/search?term=${action.payload}`,
+//       });
+//       yield put({ type: "SET_SEARCH", payload: response.data });
+//     } catch (error) {
+//       console.log("error with SEARCH GET request", error);
+//     }
+// }
+
 function* fetchSearchResults(action){
   try {
       const response = yield axios({
-        method: "GET",
-        url: `/api/search?term=${action.payload}`,
+        method: "POST",
+        url: `/api/search/${action.payload}`,
       });
       yield put({ type: "SET_SEARCH", payload: response.data });
     } catch (error) {

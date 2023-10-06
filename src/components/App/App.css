@@ -6,14 +6,16 @@ body {
     flex-direction: row;
     justify-content: space-between;
     border: 2px solid black;
-    border-radius: 2px;
+    border-radius: 5px;
     width: 50%;
     margin: 0 auto;
-    background-color:rgb(164, 238, 230);
+    background-color:rgb(89, 214, 202);
     font-size: 18px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+
+
 }
 
 h1, h2 {
     text-align: center;
 }
-

@@ -13,18 +13,8 @@ import _rootReducer from './redux/reducers/_root.reducer';
 const sagaMiddleware = createSagaMiddleware();
 
 
-// function* watcherSaga() {
-//   yield takeEvery("FETCH_CATEGORY", getCategorySaga);
-//   yield takeEvery("ADD_CATEGORY", addCategorySaga);
-//   yield takeEvery("FETCH_FAVORITE", getFavoriteSaga);
-//   yield takeEvery("ADD_FAVORITE", addFavoriteSaga);
-// }
-
-
 const storeInstance = createStore(
-    combineReducers({
-        _rootReducer
-    }),
+        _rootReducer,
     applyMiddleware(sagaMiddleware, logger),
 );
 

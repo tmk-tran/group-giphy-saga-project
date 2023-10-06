@@ -31,26 +31,44 @@ export default function Form() {
     <div className="card-container">
       <div className="card">
         <Card>
-          <CardContent>
-            <Typography variant="h5">
-              Search Giphy Photos:
-            </Typography>
+          <CardContent style={{ backgroundColor: "rgb(102, 150, 246)" }}>
             <br />
             <TextField
               type="text"
               value={newInput}
-              placeholder="Search"
+              placeholder="Search Giphy Gifs..."
               onChange={(event) => setNewInput(event.target.value)}
-              style={{width: "100%"}}
+              style={{ width: "100%", backgroundColor: "ghostwhite" }}
             ></TextField>
             {/* <input type="text" value={newInput} onChange={(event) => setNewInput(event.target.value)}></input> */}
             <div className="search-button">
-              <Button variant="contained" type="submit" onClick={handleClick}>
+              <Button
+                variant="contained"
+                color="secondary"
+                type="submit"
+                onClick={handleClick}
+                style={{ backgroundColor: "rgb(160, 204, 183)", color: "bla" }}
+
+              >
                 SEARCH
               </Button>
             </div>
           </CardContent>
         </Card>
+      </div>
+      <div className="giphy">
+        <iframe
+          src="https://giphy.com/embed/NS7gPxeumewkWDOIxi"
+          width="480"
+          height="270"
+          className="giphy-embed"
+          allowFullScreen
+        ></iframe>
+        <p>
+          <a href="https://giphy.com/gifs/detectivepikachumovie-NS7gPxeumewkWDOIxi">
+            via GIPHY
+          </a>
+        </p>
       </div>
     </div>
   );

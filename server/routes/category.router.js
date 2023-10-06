@@ -17,25 +17,5 @@ router.get('/', (req, res) => {
     });
 });
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const searchTerm = req.query.q; // Extracting a search term from query parameters
-
-//     // Validate the search term
-//     if (!searchTerm || typeof searchTerm !== "string") {
-//       return res.status(400).send({ error: "Invalid search term" });
-//     }
-
-//     // Construct the API request URL with the validated search term
-//     const response = await axios.get(
-//       `http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${searchTerm}`
-//     );
-//     res.send(response.data);
-    
-//   } catch (err) {
-//     console.log("error in GET API", err);
-//     res.sendStatus(500);
-//   }
-// });
 
 module.exports = router;

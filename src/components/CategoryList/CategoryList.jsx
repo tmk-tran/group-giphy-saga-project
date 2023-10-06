@@ -1,26 +1,36 @@
 import React from "react";
-import CategoryItem from "../CategoryItem/CategoryItem.jsx"
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import CategoryListItem from "../CategoryListItem/CategoryListItem";
+// import CategoryListItem from "../CategoryListItem/CategoryListItem";
 
 function CategoryList() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const searchReducer = useSelector((store) => store.category.searchReducer);
+  useEffect(() => {
+    dispatch({ type: "FETCH_CATEGORY" });
+    dispatch({ type: "FETCH_SEARCH" });
+  }, []);
+  // const search = useSelector((store) => store.searchReducer.searchReducer);
+  const category = useSelector(
+    (store) => store.categoryReducer.categoryReducer
+  );
+  console.log("category list", category);
+  //   console.log("search list", search);
 
-    useEffect(() => {
-        dispatch({ type: "FETCH_CATEGORY"});
-    }, []); 
+  return (
+    <div>
+      
+        {/* {category.map((categoryItem) => (
+          <li key={categoryItem.id}>
+            retu
+                {categoryItem}
+            {/* <CategoryListItem categoryItem={categoryItem} /> */}
+            
+          {/* </li>
+        ))} */} 
+    </div>
+  );
 }
-
-return (
-    <ul>
-
-            {searchReducer.map((categoryItem) => {
-                return <CategoryItem key={categoryItem.id} categoryItem={categoryItem} />
-            })}
-    
-    </ul>
-)
-
 /// make categoryItem component yet
-export default CategoryList
+export default CategoryList;

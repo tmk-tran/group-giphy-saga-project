@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 const categoryReducer = (state = [], action) => {
   switch (action.type) {
     case "SET_CATEGORY":
-      return action.payload;//search string?
+      return action.payload;
     default:
       return state;
   }

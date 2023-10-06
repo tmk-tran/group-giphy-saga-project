@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 
 // router.get("/", async (req, res) => {
 //   try {
-//     const searchTerm = req.query.q; // Extracting a search term from query parameters
+//     const searchTerm = req.query.params; // Extracting a search term from query parameters
 
 //     // Validate the search term
 //     if (!searchTerm || typeof searchTerm !== "string") {
