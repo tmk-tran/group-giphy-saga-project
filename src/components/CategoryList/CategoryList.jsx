@@ -1,38 +1,25 @@
-import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import CategoryListItem from "../CategoryListItem/CategoryListItem";
-// import CategoryListItem from "../CategoryListItem/CategoryListItem";
+import { useSelector } from "react-redux";
+import CategoryListItem from "../CategoryListItem/CategoryListItem"
+
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function CategoryList() {
-  const dispatch = useDispatch();
+  const search = useSelector((store) => store.searchReducer.searchReducer)
 
-  useEffect(() => {
-    dispatch({ type: "FETCH_CATEGORY" });
-    dispatch({ type: "FETCH_SEARCH" });
-  }, []);
-  const search = useSelector((store) => store.searchReducer.searchReducer);
-  const category = useSelector(
-    (store) => store.categoryReducer.categoryReducer
-  );
-  console.log("category list", category);
-  console.log("search list", search);
+  console.log(search)
+
 
   return (
     <div>
-      <h1>map and get me some images</h1>
-      {category.map((item) => {
-        // return <CategoryListItem key={item.id} item={item} />;
+
+      {search.map((searchItem) => {
+
         return (
-          <div>
-            <img src={item.images} alt={item.title || item.id} />
-            <p>{item.title}</p>
-            <li>{item.name}</li>
-          </div>
+          <CategoryListItem key={searchItem.id} searchItem={searchItem} />
         );
       })}
     </div>
   );
+  /// make categoryItem component yet
 }
-/// make categoryItem component yet
 export default CategoryList;

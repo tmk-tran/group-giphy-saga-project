@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
@@ -10,8 +10,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: "FETCH_CATEGORY" })
+  }, [])
+
   return (
     <Router>
       <div className="App">
@@ -28,7 +35,7 @@ function App() {
               </Link>
               <Link to="/favorites">
                 {" "}
-                <FontAwesomeIcon icon={faHeart} size="1x" color="dark_blue" style={{ marginRight: "10px" }} />{" "}
+                <FontAwesomeIcon icon={faHeart} size="1x" style={{ marginRight: "10px" }} />{" "}
                 {/* Display the Favorite icon */}
               </Link>
             </div>

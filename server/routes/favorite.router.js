@@ -16,10 +16,12 @@ router.get("/", async (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const body = req.body
-  let queryText = `INSERT INTO "favorites" ("url")
-  VALUES ($1)`
-  pool.query(queryText, [body.url])
+  const favorite = req.body
+  let queryText = `INSERT INTO "favorites" ("url", "category_id")
+  VALUES ($1, $2);`;
+
+  console.log(req.body)
+  pool.query(queryText, [favorite.url, favorite.categoryId])
       .then(result => {
           res.sendStatus(200);
       }).catch(err => {
@@ -29,26 +31,6 @@ router.post('/', (req, res) => {
 
 });
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const searchTerm = req.query.params; // Extracting a search term from query parameters
-
-//     // Validate the search term
-//     if (!searchTerm || typeof searchTerm !== "string") {
-//       return res.status(400).send({ error: "Invalid search term" });
-//     }
-
-//     // Construct the API request URL with the validated search term
-//     const response = await axios.get(
-//       `http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${searchTerm}`
-//     );
-//     res.send(response.data);
-    
-//   } catch (err) {
-//     console.log("error in GET API", err);
-//     res.sendStatus(500);
-//   }
-// });
 
 // update given favorite with a category id
 router.put('/:favId', (req, res) => {
@@ -61,15 +43,14 @@ router.put('/:favId', (req, res) => {
           res.sendStatus(201);
       }).catch(err => {
           console.log('error updating favorite:', err);
-          res.sendStatus(200);
+          res.sendStatus(500);
       })
 });
 
 // delete a favorite
 router.delete('/:id', (req, res) => {
-  const id = req.params
   let queryText = `DELETE FROM "favorites" WHERE "id"=$1;`;
-  pool.query(queryText, [id])
+  pool.query(queryText, [req.params.id])
   .then ( () => {
       res.sendStatus(200);
   })

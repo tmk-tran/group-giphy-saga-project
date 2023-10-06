@@ -26,7 +26,6 @@ function* addCategorySaga() {
 }
 
 
-
 function* fetchFavoriteSaga(){
   try {
       const response = yield axios({
@@ -41,10 +40,11 @@ function* fetchFavoriteSaga(){
 
 function* addFavoriteSaga(action) {
   try {
+    console.log(action.payload);
     yield axios({
       method: "POST",
       url: "/api/favorite",
-      data: { name: action.payload.name },
+      data: action.payload
     });
 
     yield put({ type: "FETCH_FAVORITES" });
@@ -53,18 +53,6 @@ function* addFavoriteSaga(action) {
     alert("Unable to add category");
   }
 }
-
-// function* fetchSearchResults(action){
-//   try {
-//       const response = yield axios({
-//         method: "GET",
-//         url: `/api/search?term=${action.payload}`,
-//       });
-//       yield put({ type: "SET_SEARCH", payload: response.data });
-//     } catch (error) {
-//       console.log("error with SEARCH GET request", error);
-//     }
-// }
 
 function* fetchSearchResults(action){
   try {
@@ -79,8 +67,11 @@ function* fetchSearchResults(action){
 }
 
 function* deleteFavorite(action) {
+  //console.log('ACTION',action.payload);
   try {
-    yield axios.delete(`/api/favorite/${action.payload}`);
+    yield axios({
+      method: "DELETE",
+      url: `/api/favorite/${action.payload}`});
     yield put({ type: "FETCH_FAVORITES" });
   } catch (error) {
     console.log("error with DELETE request", error);
@@ -88,13 +79,11 @@ function* deleteFavorite(action) {
 }
 
 
-
 export default function* () {
   yield takeEvery("FETCH_CATEGORY", fetchCategorySaga);
   yield takeEvery("ADD_CATEGORY", addCategorySaga);
-  yield takeEvery("FETCH_FAVORITE", fetchFavoriteSaga);
+  yield takeEvery("FETCH_FAVORITES", fetchFavoriteSaga);
   yield takeEvery("ADD_FAVORITE", addFavoriteSaga);
   yield takeEvery("FETCH_SEARCH", fetchSearchResults);
   yield takeEvery("DELETE_FAVORITE", deleteFavorite);
-
 }

@@ -10,9 +10,9 @@ console.log(favorite)
   return (
     <div>
 
-            <img src={favorite.image_url} alt={favorite.title} />
+         
             <p>{favorite.title}</p>
-            
+            <img src={favorite.images.original.url} alt={favorite.title || favorite.id} />
         </div>
 
    
