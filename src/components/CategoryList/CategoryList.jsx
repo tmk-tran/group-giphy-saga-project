@@ -25,7 +25,7 @@ function CategoryList() {
         // return <CategoryListItem key={item.id} item={item} />;
         return (
           <div>
-            <img src={item.id.images.original.url} alt={item.title || item.id} />
+            <img src={item.images} alt={item.title || item.id} />
             <p>{item.title}</p>
             <li>{item.name}</li>
           </div>
