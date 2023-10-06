@@ -23,7 +23,7 @@ export default function CategoryListItem({searchItem}) {
             />
             <Typography variant="h5">Title: {searchItem.title}</Typography>
             <br />
-            <label htmlFor="#favSelect" style={{fontSize: "20px"}}>Select: </label>
+            <label htmlFor="#favSelect" style={{fontSize: "20px"}}>Select a category: </label>
             <select  id="favSelect" onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
                 <option value={0}></option>
               {category.map((category) => <option key={category.id} value={category.id}>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</option>)}
