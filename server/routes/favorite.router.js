@@ -6,7 +6,7 @@ const router = express.Router();
 //get api request for giphy search
 router.get("/", async (req, res) => {
   pool.query(`SELECT "favorites"."id", "favorites"."url", "favorites"."category_id", "category"."name" FROM "favorites"
-  JOIN "category" ON "category"."id" = "favorites"."category_id" ORDER BY "favorites"."id" ASC;`)
+  JOIN "category" ON "category"."id" = "favorites"."category_id" ORDER BY "favorites"."id" DESC;`)
       .then(result => {
           res.send(result.rows)
       }).catch(err => {
@@ -33,12 +33,12 @@ router.post('/', (req, res) => {
 
 
 // update given favorite with a category id
-router.put('/:favId', (req, res) => {
-  let categoryId = req.body.category_id;
-  let favId = req.params.id;
+router.put('/:favoriteId', (req, res) => {
+  let favoriteId = req.params.favoriteId;
+  let categoryId = req.body.categoryId;
   let queryText = `UPDATE "favorites" SET "category_id" = $1
   WHERE "id" = $2;`;
-  pool.query(queryText, [categoryId, favId])
+  pool.query(queryText, [categoryId , favoriteId])
       .then(result => {
           res.sendStatus(201);
       }).catch(err => {

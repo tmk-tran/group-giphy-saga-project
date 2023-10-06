@@ -1,6 +1,7 @@
-import { Typography, CardContent, Card } from "@mui/material";
+import { Typography, CardContent, Card, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import { Button } from "@mui/material"
 
 
 export default function CategoryListItem({searchItem}) {
@@ -12,7 +13,8 @@ export default function CategoryListItem({searchItem}) {
       );
     
     return (
-        <Card style={{ width: "30%", margin: "0 auto", minWidth: "200px" }}>
+        // <Grid container spacing={6}>
+        <Card style={{ width: "50%", margin: "15px auto", minWidth: "200px"}}>
           <CardContent>
             <img
             style={{ width: "100%", height: "auto"}}
@@ -21,14 +23,15 @@ export default function CategoryListItem({searchItem}) {
             />
             <Typography variant="h5">Title: {searchItem.title}</Typography>
             <br />
-            {/* <Typography variant="h5">ID: {searxxchItem.id}</Typography> */}
-            <label htmlFor="#favSelect">Select a Category:</label>
+            <label htmlFor="#favSelect" style={{fontSize: "20px"}}>Select: </label>
             <select  id="favSelect" onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
-                <option value={0}>Select a Category</option>
+                <option value={0}></option>
               {category.map((category) => <option key={category.id} value={category.id}>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</option>)}
             </select>
             <br />
-            <button
+            <br />
+            <Button
+              variant="contained"  
               onClick={() =>
                 dispatch({
                   type: "ADD_FAVORITE",
@@ -37,7 +40,7 @@ export default function CategoryListItem({searchItem}) {
               }
             >
               favorite
-            </button>
+            </Button>
             <br />
           </CardContent>
         </Card>

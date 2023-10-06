@@ -3,10 +3,10 @@
     margin: 100px auto;
     /* border: 3px solid black;
     border-radius: 5px; */
-    box-shadow: 0px -25px 20px 0px rgb(150, 185, 255),
-    25px 0px 20px 0px rgb(150, 185, 255),
-    0px 25px 20px 0px rgb(150, 185, 255),
-    -25px 0px 20px 0px rgb(150, 185, 255);
+    box-shadow: 0px -25px 20px 0px white,
+    25px 0px 20px 0px white,
+    0px 25px 20px 0px white,
+    -25px 0px 20px 0px white;
 }
 
 .card-container {

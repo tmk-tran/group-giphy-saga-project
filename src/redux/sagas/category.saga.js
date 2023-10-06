@@ -77,7 +77,20 @@ function* deleteFavorite(action) {
     console.log("error with DELETE request", error);
   }
 }
-
+function* updateItemSaga(action) {
+  try {
+    yield axios({
+      method: "PUT",
+      url: `/api/favorite/${action.payload.id}`,
+      data: {categoryId: action.payload.category_id}
+    });
+    yield put({ type: "FETCH_FAVORITES" });
+  } catch (error) {
+    console.log("error with UPDATE request", error);
+  }
+}
+// {category_id: action.payload.category_id}} maybe need this in url?
+    
 
 export default function* () {
   yield takeEvery("FETCH_CATEGORY", fetchCategorySaga);
@@ -86,4 +99,5 @@ export default function* () {
   yield takeEvery("ADD_FAVORITE", addFavoriteSaga);
   yield takeEvery("FETCH_SEARCH", fetchSearchResults);
   yield takeEvery("DELETE_FAVORITE", deleteFavorite);
+  yield takeEvery("UPDATE_FAVORITE", updateItemSaga);
 }
